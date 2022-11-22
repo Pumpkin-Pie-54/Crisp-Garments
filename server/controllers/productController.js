@@ -14,7 +14,7 @@ const ProductController = {
         {
           log: 'Express error handler caught a middleware error in getMethod',
           status: 500,
-          message: { err: 'An error occurred in getAllProducts' }
+          message: { err: 'CRISP GARMENTS!!!! An error occurred in getAllProducts' }
         }
       );
     }

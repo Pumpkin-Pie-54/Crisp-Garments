@@ -34,3 +34,6 @@ const DisplayCard = (props) => {
 };
 
 export default DisplayCard;
+
+//from original project
+{/* <Cards id={item._id} name={item.name} price={item.price} image={item.image} /> */}
