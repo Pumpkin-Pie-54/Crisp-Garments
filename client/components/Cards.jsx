@@ -6,9 +6,6 @@ import Axios from 'axios';
 //data includes the name, price, and image of an item
 const Cards = (item) => {
   const { id, name, price, image } = item;
-  console.log(name);
-  console.log(price);
-  console.log(image);
 
   const addToCart = () => {
     Axios.post('http://localhost:3000/api/cart', 
