@@ -5,12 +5,9 @@ import Cards from './Cards.jsx';
 
 //example data includes the item name, price, and image
 const DisplayCard = (props) => {
-	// const { items } = props;
-
-	// const result = data.productItems.filter((item) => item.category === 'Produce');
-	// console.log(result);
 
 	const [items, setItems] = useState([]);
+  const [totalCart, setTotalCart] = useState([]);
 
 	useEffect(() => {
 		fetch('https://fakestoreapi.com/products/')
@@ -24,8 +21,8 @@ const DisplayCard = (props) => {
 		<section className="itemFlex">
 			{items.map((item) => {
 				return (
-					<div key={item._id}>
-						<Cards id={item._id} name={item.name} price={item.price} image={item.image} />
+					<div key={item.id}>
+						<Cards totalCart={totalCart} setTotalCart={setTotalCart} id={item.id} title={item.title} price={item.price} image={item.image} />
 					</div>
 				);
 			})}
