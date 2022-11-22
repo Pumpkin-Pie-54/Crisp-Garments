@@ -24,10 +24,12 @@ const DisplayCard = (props) => {
 
 console.log('items after useEffect display cards', items)
 
-
-
-
-
+// const arrayOfitems = [];
+// for (let i = 0 ; i < items.length; i++) {
+//   arrayOfitems.push(<div key={items[i].id}>
+//           <Cards id={items[i].id} title={items[i].title} price={items[i].price} description={items[i].description} category={items[i].category} rating={items[i].rating}/>
+//           </div>)
+// }
 
 
   // let items;
@@ -60,43 +62,34 @@ console.log('items after useEffect display cards', items)
   
   // const result = data.productItems.filter((item) => item.category === 'Produce');
   // console.log(result);
-  
-  
+   // id
+  // title
+  //category
+  //description
+  // rating
+  // image
+  // price
+  //only 1
+        // <Cards id={items[0].id} title={items[0].title} price={items[0].price} description={items[0].description} category={items[0].category} rating={items[0].rating}/>
   return (
     <section className='itemFlex'>
       <h1>hey guys</h1>
-      {items.map((item) => {
+      {console.log('im below hey guys but above map')}
+      {console.log('items[0]', items[0])}
+      {arrayOfItems}
+      {/* {items.map((item) => {
+        console.log('item in displayCard map', item)
         return (
-          <div key={item._id}>
-            {/* <Cards id={item._id} name={item.name} price={item.price} image={item.image} /> */}
-            <Cards id={item.id} name={item.name} price={item.price} image={item.image} />
+          <div key={item.id}>
+          <Cards id={item.id} title={item.title} price={item.price} description={item.description} category={item.category} rating={item.rating}/>
           </div>
-        );
-      })}
+          );
+        })} */}
     </section>
   );
 };
 
 export default DisplayCard;
 
-// category
-// : 
-// "men's clothing"
-// description
-// : 
-// "Your perfect pack for everyday use and walks in the forest. Stash your laptop (up to 15 inches) in the padded sleeve, your everyday"
-// id
-// : 
-// 1
-// image
-// : 
-// "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg"
-// price
-// : 
-// 109.95
-// rating
-// : 
-// {rate: 3.9, count: 120}
-// title
-// : 
-// "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops"
+//from original project
+{/* <Cards id={item._id} name={item.name} price={item.price} image={item.image} /> */}
