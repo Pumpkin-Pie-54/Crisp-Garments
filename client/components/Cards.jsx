@@ -5,7 +5,6 @@ import Axios from 'axios';
 
 //data includes the name, price, and image of an item
 const Cards = ({ id, title, category, description, rating, image, price, totalCart, setTotalCart }) => {
-  // const { id, title, category, description, rating, image, price } = item;
 
   const addToCart = (event) => {
     const dataToSend = {
@@ -14,7 +13,6 @@ const Cards = ({ id, title, category, description, rating, image, price, totalCa
       price: price
     }
     setTotalCart(totalCart.concat(dataToSend));
-    console.log('after totalCart', totalCart)
   }
 
   return (

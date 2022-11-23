@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import DisplayCard from "../displayCard.jsx";
+import DisplayCards from "../DisplayCards.jsx";
 import Axios from 'axios';
 
 export default function Home() {
@@ -23,7 +23,7 @@ export default function Home() {
 
     return(
         <>
-            <DisplayCard items={items} />
+            <DisplayCards items={items} />
         </>
     )
      
