@@ -1,3 +1,4 @@
+// const { getPathContributingMatches } = require('@remix-run/router/dist/utils.js');
 const Cart = require('../models/userModel.js');
 
 const CartController = {
@@ -13,22 +14,58 @@ const CartController = {
           // orderTime: new Date.now(), //moved to default on schema
           numberOfItems: cart.length,
           items: cart, 
-          });
-          console.log('newcart after create', newCart)
-          res.locals.newCart = newCart;
-          return next();
+        });
+        console.log('newcart after create', newCart)
+        res.locals.newCart = newCart;
+        return next();
+    } catch(err) {
+      return next({
+        log: 'Express error in cartController.createCart',
+        status: 400,
+        message: {
+          err: 'An error occured inside the cartController.createCart middleware'
+        },
+      });
+    }
+  },
 
-        } catch(err) {
-          return next({
-            log: 'Express error in cartController.createCart',
-            status: 400,
-            message: {
-              err: 'An error occured inside the cartController.createCart middleware'
-            },
-          });
-        }
-      }
-    };
+  async getCart(req, res, next) {
+    try{
+      const { previousOrderName } = req.body
+      const found = await Cart.findOne({ orderName: previousOrderName }); 
+      res.locals.whatsInTheCart = found.items;
+      return next();
+    } catch(err) {
+      return next({
+        log: 'Express error in cartController.getCart',
+        status: 400,
+        message: {
+          err: 'An error occured inside the cartController.getCart middleware'
+        },
+      });
+    }
+  },
+
+  async deleteCart(req, res, next) {
+    try{
+      const { previousOrderName } = req.body
+      const found = await Cart.deleteOne({ orderName: previousOrderName }); 
+      const deleted = await found;
+      if(deleted.deletedCount === 0) res.locals.isDeleted = false;
+      else res.locals.isDeleted = true;
+      return next();
+    } catch(err) {
+      return next({
+        log: 'Express error in cartController.getCart',
+        status: 400,
+        message: {
+          err: 'An error occured inside the cartController.getCart middleware'
+        },
+      });
+    }
+  }
+
+};
 
   module.exports = CartController;
 

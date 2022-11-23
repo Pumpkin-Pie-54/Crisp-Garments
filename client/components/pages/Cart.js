@@ -2,9 +2,13 @@ import { useEffect } from "react";
 import DisplayCards from "../DisplayCards.jsx";
 
 export default function Cart(category) {
+//need access to total cart
+
+  //name state
+
 
   const handleCheckout = (event) => {
-
+//post request with cart and user
   }
 
   const handleName = (event) => {

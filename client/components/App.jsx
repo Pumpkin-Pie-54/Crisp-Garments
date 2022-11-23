@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 import DisplayCards from "./DisplayCards.jsx";
 
 export default function App() {
-  const [category, setCategory] = useState('jewelery');
+  const [category, setCategory] = useState('');
 
   return (
     <>
