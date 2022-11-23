@@ -17,24 +17,15 @@ export default function App() {
         <DisplayCards category={category} setCategory={setCategory} />
       </div>
 
-      {/* <Routes>
+      <Routes>
 
         <Route path='/cart' element={<Cart />}></Route>
         <Route path='/login' element={<Login />}></Route>
         
-      </Routes> */}
+      </Routes>
     </TotalCartContextProvider>
   )
   
 }
-
-{/* // return (
-//   <>
-//     <Navbar category={category} setCategory={setCategory}/>
-//     <div className="container">
-//       <DisplayCards category={category} setCategory={setCategory}/>
-//     </div>
-//   </>
-// ) */}
 
 
