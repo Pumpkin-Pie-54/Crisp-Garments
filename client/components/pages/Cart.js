@@ -8,10 +8,12 @@ export default function Cart() {
   const {totalCart, setTotalCart} = useContext(TotalCartContext)
   console.log(totalCart)
   //for each item in totalCart,
+  const cart = [...totalCart];
   const arrayToDisplay = totalCart.forEach((el) =>
   {
-    <h1>{el}</h1>
+    <h1>I am an item!</h1>
   })
+  
   console.log('totalCart', totalCart)
   console.log('arrayToDisplay', arrayToDisplay)
     //display a card with the correct info
