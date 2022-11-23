@@ -13,5 +13,5 @@ export default function Navbar({ category, setCategory }) {
         <li className="nav-link"><Link to='/login'>Login</Link></li>
       </ul>
     </nav>
-  )
+    )
 }

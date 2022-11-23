@@ -11,14 +11,19 @@ const router = express.Router();
 //   (req, res) => res.status(200).json(res.locals.all)
 // );
 
-// router.get('/cart',
-//   cartController.getCart,
-//   (req, res) => res.status(200).json(res.locals.cart)
-// );
+router.get('/cart',
+  cartController.getCart,
+  (req, res) => res.status(200).json(res.locals.whatsInTheCart) //returns items array
+);
 
 router.post('/cart', 
   cartController.createCart,
   (req, res) => res.status(200).json(res.locals.newCart)
+);
+
+router.delete('/cart', 
+  cartController.deleteCart,
+  (req, res) => res.status(200).send(res.locals.isDeleted) //returns true if deleted, false if not
 );
 
 // router.post('/addProduct',

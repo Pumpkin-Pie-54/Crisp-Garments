@@ -1,7 +1,7 @@
-import { STATES } from 'mongoose';
+// import { STATES } from 'mongoose';
 import React from 'react';
-import { useContext, useState } from 'react';
-import Axios from 'axios';
+// import { useContext, useState } from 'react';
+// import Axios from 'axios';
 
 //data includes the name, price, and image of an item
 const Cards = ({ id, title, category, description, rating, image, price, totalCart, setTotalCart }) => {
