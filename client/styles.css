@@ -27,6 +27,26 @@ body {
 
 .site-title {
   font-size: 2rem;
+  border: none;
+  background-color: #90a955;
+  color: white;
+}
+
+.site-title:hover {
+  background-color: #4f772d;
+  cursor: pointer;
+}
+
+.nav-button {
+  font-size: 1rem;
+  border: none;
+  background-color: #90a955;
+  color: white;
+}
+
+.nav-button:hover {
+  background-color: #4f772d;
+  cursor: pointer;
 }
 
 .nav ul {
@@ -89,4 +109,8 @@ body {
   width: 10em;
   background-color: #90a955; 
   border-radius: 2em;
+}
+
+.button:hover {
+  cursor: pointer;
 }
