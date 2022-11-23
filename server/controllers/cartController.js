@@ -1,4 +1,3 @@
-const db = require('../db.js');
 const Cart = require('../models/userModel.js');
 
 const CartController = {
@@ -14,8 +13,8 @@ const CartController = {
           // orderTime: new Date.now(), //moved to default on schema
           numberOfItems: cart.length,
           items: cart, 
-          })
-
+          });
+          console.log('newcart after create', newCart)
           res.locals.newCart = newCart;
           return next();
 
