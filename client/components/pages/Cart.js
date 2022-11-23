@@ -1,28 +1,32 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import DisplayCards from "../DisplayCards.jsx";
-import Axios from 'axios';
 
-export default function Cart() {
-  const [items, cartItems] = useState([]);
+export default function Cart(category) {
 
-  useEffect(() => {
-    Axios.get("http://localhost:3000/api/cart")
-      .then((res) => {
-        cartItems(res.data);
-        return cartItems;
-      })
-      .catch((err) => console.log( `Error: ${err}`));
-  }, []);
+  const handleCheckout = (event) => {
+
+  }
+
+  const handleName = (event) => {
+    setName(event.target.value);
+  };
 
   return (
-        <div className='shoppingCart'>
-          <h1>Shopping Cart</h1>
-          <div className='cartItems'>
-            {/* do we want everything including add item button 
-            maybe need to make a new page for Cart items??? 
-            DisplayCard is just a placeholder for now to know that our GET req is working*/}
-            <DisplayCard items={items} />
-          </div>
-        </div>
+    <div className='shoppingCart'>
+      <h1>Shopping Cart</h1>
+      <h1>{category}</h1>
+      <form onSubmit={handleCheckout}>
+        <input type='text' onChange={(event) => handleName(event)} placeholder="enter your name"></input>
+        <input type='submit' value="Submit!"></input>
+      </form>
+      {/* {items.filter(item => item)
+        .map((item) => {
+          return (
+            <div className='cartItems'>
+              <DisplayCard items={items} />
+            </div>
+        )})
+      } */}
+    </div>
   )
 }

@@ -1,6 +1,4 @@
-
-
-import { Link, useMatch, useResolvedPath } from "react-router-dom"
+import { Route, Routes, Link } from "react-router-dom"
 
 export default function Navbar({ category, setCategory }) {
   return (
@@ -11,22 +9,9 @@ export default function Navbar({ category, setCategory }) {
         <button className='nav-button' onClick={() => {setCategory('jewelery')}}>Jewelry</button>
         <button className='nav-button' onClick={() => {setCategory('electronics')}}>Electronics</button>
         <button className='nav-button' onClick={() => {setCategory('women\'s clothing')}}>Women's Clothing</button>
-        {/* <button className='nav-button' onClick={"Samantha's amazing function"}>Cart</button>
-        <button className='nav-button' onClick={"Samantha's amazing function"}>Login</button> */}
+        <li className="nav-link"><Link category={category} to='/cart'>Cart</Link></li> 
+        <li className="nav-link"><Link to='/login'>Login</Link></li>
       </ul>
     </nav>
   )
 }
-
-// function CustomLink({ to, children, ...props }) {
-//   const resolvedPath = useResolvedPath(to)
-//   const isActive = useMatch({ path: resolvedPath.pathname, end: true })
-
-//   return (
-//     <li className={isActive ? "active" : ""}>
-//       <Link to={to} {...props}>
-//         {children}
-//       </Link>
-//     </li>
-//   )
-// }
