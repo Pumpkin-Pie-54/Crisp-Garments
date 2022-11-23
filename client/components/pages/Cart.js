@@ -4,7 +4,7 @@ import DisplayCards from "../DisplayCards.jsx";
 export default function Cart(category) {
 
   const handleCheckout = (event) => {
-
+    
   }
 
   const handleName = (event) => {
