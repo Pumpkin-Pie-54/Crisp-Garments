@@ -4,12 +4,12 @@ const Schema = mongoose.Schema;
 
 const cartSchema = new Schema({
     orderName: String,
-    orderTime: String,
-    items: [{
-        title: String,
-        id: String,
-        price: String,
-    }]
+    orderTime: {
+        type: Date,
+        default: Date.now
+    },
+    numberOfItems: Number,
+    items: Array, //might need to update to determine how to
 });
 
 const Cart = mongoose.model('cart', cartSchema);
