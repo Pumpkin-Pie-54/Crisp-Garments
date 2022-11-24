@@ -26,9 +26,9 @@ const Cards = ({ id, title, category, description, rating, image, price, totalCa
       <div className="item_details">
         <p>{description}</p>
         <p>{title}</p>
-        <p>$ {price}</p>
-        <button onClick={addToCart} title={title} price={price} id={id} className='button'>Add to Cart</button>
       </div>
+      <p>$ {price}</p>
+      <button onClick={addToCart} title={title} price={price} id={id} className='button'>Add to Cart</button>
     </div>
   );
 };
