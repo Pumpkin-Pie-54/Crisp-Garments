@@ -1,92 +1,152 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
 * {
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
+	font-family: 'Montserrat', sans-serif;
 }
 
 body {
-  margin: 0;
+	margin: 0;
+	background-image: url(https://static.vecteezy.com/system/resources/thumbnails/002/909/367/small/luxury-gold-lotus-background-zen-wallpaper-collection-with-golden-lotus-line-art-design-for-yoga-banner-luxury-cover-design-and-invitation-invite-banner-natural-product-packaging-design-vector.jpg);
+	/* background-size: cover; */
 }
 
 .container {
-  margin: 1rem;
-  text-align: center;
+	margin: 1rem;
+	text-align: center;
 }
 
 .nav {
-  background-color: #90a955; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
-  gap: 2rem;
-  padding: 0 1rem;
-  
+	background-color: #90a955;
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: stretch;
+	gap: 2rem;
+	padding: 0 1rem;
+	height: 50px;
 }
 
 .site-title {
-  font-size: 2rem;
+	font-size: 2rem;
+	border: none;
+	background-color: #90a955;
+	color: white;
+	font-weight: 600;
+}
+
+.site-title:hover {
+	background-color: #4f772d;
+	cursor: pointer;
+}
+
+.nav-buttons {
+	display: flex;
+	gap: 2em;
+}
+
+.nav-button {
+	font-size: 1.2rem;
+	border: none;
+	background-color: #90a955;
+	color: white;
+	font-weight: 600;
+}
+
+.nav-button:hover {
+	background-color: #4f772d;
+	cursor: pointer;
 }
 
 .nav ul {
-  padding: 0;
-  margin: 0;
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	display: flex;
+	gap: 1rem;
 }
 
 .nav a {
-  color: inherit;
-  text-decoration: none;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  padding: .25rem;
-  
-
-}
-
-.nav li.active {
-  background-color: #4e7c25;
-  
+	color: inherit;
+	text-decoration: none;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0.25rem;
 }
 
 .nav li:hover {
-  background-color: #4f772d;
+	background-color: #4f772d;
 }
 
 .itemFlex {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 .cards {
-  width: 300px;
-  height: 300px;
-  border: solid;
-  border-radius: 2em;
-  border-color: rgb(193, 192, 192);
-  margin: 1em;
-  display: flex;
-  flex-direction: column;
-  align-self: center;
-  justify-content: center;
+	width: 320px;
+	height: 320px;
+	border: solid;
+	border-radius: 2em;
+	border-color: rgb(193, 192, 192);
+	margin: 1em;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: white;
+}
+
+.item_details {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 110px;
+}
+
+.item_details p {
+	margin: 0.5em;
+	font-size: 0.9em;
 }
 
 .photo {
-  height: 10em;
-  width: 10em;
-  margin-right: auto;
-  margin-left: auto;
+	height: 7em;
+	width: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 .button {
-  height: 2em;
-  width: 10em;
-  background-color: #90a955; 
-  border-radius: 2em;
+	height: 2em;
+	width: 10em;
+	background-color: #90a955;
+	border-radius: 2em;
+	border: none;
+	color: white;
+}
+
+.button:hover {
+	cursor: pointer;
+}
+
+.itemsInCart {
+	border: solid;
+	border-radius: 2em;
+	border-color: rgb(193, 192, 192);
+	margin: 1em;
+	background-color: white;
+}
+
+.listOfItemsInCart {
+	display: flex;
+	flex-flow: column;
+}
+
+.runningTotal {
+	font-weight: 900;
+	font-size: 24px;
+	border: 2px solid #90a955;
+	background-color: white;
 }

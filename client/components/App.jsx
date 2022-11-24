@@ -1,42 +1,30 @@
-// import DisplayCard from './displayCard.jsx';
-
-// const App = () => {
-//   return (
-//     <div>
-//       <DisplayCard />
-//     </div>
-
-//   );
-// };
-
-// export default App;
-
-import { Route, Routes } from "react-router-dom";
-import Home from './pages/Home'
+import { Route, Routes, BrowserRouter, Link } from "react-router-dom";
+import React, { useState } from 'react';
 import Navbar from "./Navbar";
-import Vegetables from './pages/Vegetables'
-import Login from "./pages/Login";
-import Cart from './pages/Cart'
-import Protein from "./pages/Protein";
-import Snacks from "./pages/Snacks";
+import DisplayCards from "./DisplayCards.jsx";
+import Cart from "./pages/Cart.js";
+import Login from "./pages/Login.js";
+
+import { TotalCartContextProvider } from "../context/TotalCartContext.jsx";
 
 export default function App() {
+  const [category, setCategory] = useState('');
+  
+      // <div className="container">
+      //   <DisplayCards category={category} setCategory={setCategory} />
+      // </div>
   return (
-    <>
-      <Navbar />
-      <div className="container">
-        <Routes>
+    <TotalCartContextProvider>
+      <Navbar category={category} setCategory={setCategory} />
 
-          <Route path= '/' element={<Home />} />
-          <Route path= '/protein' element={<Protein />} />
-          <Route path= '/vegetables' element={<Vegetables />} />
-          <Route path= '/snacks' element={<Snacks />} />
-          <Route path= '/login' element={<Login />} />
-          <Route path= '/cart' element={<Cart />} />
-          
-        </Routes>
-      </div>
-    </>
+
+      <Routes>
+        <Route path='/' element={<DisplayCards category={category} setCategory={setCategory}/>}></Route>
+        <Route path='/cart' element={<Cart />}></Route>
+        <Route path='/login' element={<Login />}></Route>
+        
+      </Routes>
+    </TotalCartContextProvider>
   )
   
 }
