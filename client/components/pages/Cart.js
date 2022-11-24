@@ -66,7 +66,6 @@ export default function Cart() {
 			<ul className="listOfItemsInCart">{arrayToDisplay}</ul>
 			<p className="runningTotal">${runningTotal}</p>
 			<form onSubmit={submitCart}>
-				<label>Order Name</label>
 				<input onChange={(event) => handle(event)} type="text" placeholder="Order Name"></input>
 				<input type="submit" value="Submit your order!"></input>
 			</form>

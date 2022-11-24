@@ -136,6 +136,7 @@ body {
 	border-radius: 2em;
 	border-color: rgb(193, 192, 192);
 	margin: 1em;
+	background-color: white;
 }
 
 .listOfItemsInCart {
@@ -147,4 +148,5 @@ body {
 	font-weight: 900;
 	font-size: 24px;
 	border: 2px solid #90a955;
+	background-color: white;
 }
